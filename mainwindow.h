@@ -3,7 +3,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-
+#include "dbmanager.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -19,8 +19,16 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    void PerRef();
+
+private slots:
+    void on_ajoutePer_clicked();
+
+    void on_supPer_clicked();
+
 private:
     Ui::MainWindow *ui;
+    dbmanager dbm;
 };
 
 #endif // MAINWINDOW_H
